@@ -1,0 +1,79 @@
+import java.io.*;
+
+class MyNumber 
+{
+	int num;
+	MyNumber()
+	{
+		num=0;
+	}
+	MyNumber(int num)
+	{
+		this.num=num;
+	}
+	
+	public static void main(String args[]) throws IOException
+	{
+		try 
+		{
+			int ch;
+			MyNumber n2=new MyNumber();
+			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+			System.out.print("\tEnter Number for check ::");
+			int n=Integer.parseInt(br.readLine());
+			MyNumber n1=new MyNumber(n);
+			
+			do
+			{
+				System.out.print("\n\t1.Is Negative.\t2.Is Positive\t3.Is Zero\t4.Is Even\t5.Is Odd\t6.Exit");
+				System.out.println("\tEnter your choice ::");
+				ch=Integer.parseInt(br.readLine());
+				
+				switch(ch)
+				{
+					case 1:n1.isNegative();
+							break;
+					case 2:n1.isPositive();
+							break;
+					case 3:n1.isZero();
+							break;
+					case 4:n1.isEven();
+							break;
+					case 5:n1.isOdd();
+							break;
+					default:System.out.println("Invalid Choice...");
+				}				
+			}
+			while(ch!=6);
+		}
+		
+		catch(IOException e)
+		{ }
+	}
+	
+	public void isNegative()
+	{
+		if(num<0)
+			System.out.println("Number is Negative...");
+	}
+	public void isPositive()
+	{
+		if(num>0)
+			System.out.println("Number is Positive...");	
+	}
+	public void isZero()
+	{
+		if(num==0)
+			System.out.println("Number is Zero...");	
+	}
+	public void isEven()
+	{
+		if(num%2==0)
+			System.out.println("Number is Even...");	
+	}
+	public void isOdd()
+	{
+		if(num%2!=0)
+			System.out.println("Number is Positive...");
+	}
+}
